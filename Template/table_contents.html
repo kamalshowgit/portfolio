@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ table_name }} Table Contents</title>
+</head>
+<body>
+    <h2>{{ table_name }} Table Contents</h2>
+    <table>
+        <tr>
+            <!-- Display column headers here -->
+            <th>ID</th>
+            <th>Column1</th>
+            <th>Column2</th>
+            <th>Column3</th>
+            <th>Column4</th>
+            <!-- Add more table headers for other columns -->
+        </tr>
+        {% for row in rows %}
+            <tr>
+                <!-- Display table data here -->
+                <td>{{ row.0 }}</td>
+                <td>{{ row.1 }}</td>
+                <td>{{ row.2 }}</td>
+                <td>{{ row.3 }}</td>
+                <td>{{ row.4 }}</td>
+                <!-- Add more table data for other columns -->
+            </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

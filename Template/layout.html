@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<!-- The core content and functionality of a website should work without JavaScript class = "no-js"  -->
+<html class="no-js" lang="en"> 
+<head>
+
+    <!--- Basic Page Needs -->
+    <meta charset = "utf-8">
+    <title> 
+        Kamal Soni: 
+        {% block title %}{% endblock %} 
+    </title>
+	<meta name="description" content = "">
+	<meta name="author" content = "">
+
+    <!-- Mobile Specific Metas -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<!-- CSS -->
+    <link rel="stylesheet" href="/static/css/default.css">
+	<link rel="stylesheet" href="/static/css/layout.css">
+    <link rel="stylesheet" href="/static/css/media-queries.css">
+    <link rel="stylesheet" href="/static/css/magnific-popup.css">
+
+   <!-- Script -->
+	<script src="/static/js/modernizr.js"></script>
+   
+   <!-- Favicons -->
+	<link rel="shortcut icon" href="/static/12.png">
+
+</head>
+
+<body>
+
+    <!-- Nav-bar -->
+    <header id="home">
+        <nav id="nav-wrap">
+            <a class="mobile-btn" href="/" title="Show navigation">Show navigation</a>
+	        <a class="mobile-btn" href="#" title="Hide navigation">Hide navigation</a>
+
+            <ul id="nav" class="nav">
+                <li class="current"><a class="smoothscroll" href="#home">Home</a></li>
+                <li><a class="smoothscroll" href="#about">About Me</a></li>
+	            <li><a class="smoothscroll" href="#resume">Resume</a></li>
+                <li><a class="smoothscroll" href="#portfolio">Portfolio</a></li>
+                <li><a class="smoothscroll" href="#testimonials">Testimonials</a></li>
+                <li><a class="smoothscroll" href="#contact">Contact</a></li>
+            </ul> 
+        </nav> <!-- end #nav-wrap -->
+      
+        {% block main %}
+        
+        {% endblock %}
+
+
+   <!-- footer -->
+   <footer>
+        <div class="row">
+            <div class="twelve columns">
+                <ul class="social-links">             
+                <li><a href="kamalsoni3839@gmail.com"><i class="fa fa-google-plus"></i></a></li> 
+                <li><a href="https://www.linkedin.com/in/kamalsonikgp/"><i class="fa fa-linkedin"></i></a></li>
+                <li><a href="https://www.instagram.com/kamal._.soni/"><i class="fa fa-instagram"></i></a></li>
+                <li><a href="https://twitter.com/kamalsoni3839"><i class="fa fa-twitter"></i></a></li>
+                </ul>
+
+                <ul class="copyright">
+                <li> &copy; Copyright 2023</li>
+                <li>Design by <a title="Styleshout" target="_blank">Kamal Soni</a></li>   
+                </ul>
+            </div>
+            <div id="go-top">
+                <a class="smoothscroll" title="Back to Top" href="#home">
+                    <i class="icon-up-open"> </i>
+                </a>
+            </div>
+        </div>
+   </footer> 
+
+   <!-- Java Script -->
+   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+   <script>window.jQuery || document.write('<script src="/static/js/jquery-1.10.2.min.js"><\/script>')</script>
+   <script type="text/javascript" src="/static/js/jquery-migrate-1.2.1.min.js"></script>
+   <script src="/static/js/jquery.flexslider.js"></script>
+   <script src="/static/js/waypoints.js"></script>
+   <script src="/static/js/jquery.fittext.js"></script>
+   <script src="/static/js/magnific-popup.js"></script>
+   <script src="/static/js/init.js"></script>
+</body>
+
+</html>

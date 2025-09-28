@@ -1,0 +1,488 @@
+/*
+=====================================================================
+*   Interactive Animations & Moving Elements
+*   Inspired by GitHub README Design
+=====================================================================
+*/
+
+/* Particle Background */
+#particles-js {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+/* Animated Title */
+.animated-title {
+    animation: titleSlideIn 1.5s ease-out;
+    position: relative;
+    overflow: hidden;
+}
+
+.animated-title::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    animation: titleShine 2s ease-in-out 1s;
+}
+
+@keyframes titleSlideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-50px) scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes titleShine {
+    0% { left: -100%; }
+    100% { left: 100%; }
+}
+
+/* Typing Animation */
+.typing-container {
+    min-height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.typing-text {
+    font-size: 1.8rem;
+    color: rgba(255, 255, 255, 0.9);
+    text-align: center;
+    margin: 0;
+}
+
+.typing-cursor {
+    animation: blink 1s infinite;
+    color: #11ABB0;
+    font-weight: bold;
+}
+
+@keyframes blink {
+    0%, 50% { opacity: 1; }
+    51%, 100% { opacity: 0; }
+}
+
+.subtitle-text {
+    margin-top: 1rem;
+    text-align: center;
+}
+
+.subtitle-text span {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 1.1rem;
+    font-weight: 300;
+    animation: fadeInUp 1s ease-out 0.5s both;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Floating Icons */
+.floating-icons {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.floating-icon {
+    position: absolute;
+    font-size: 2rem;
+    opacity: 0.3;
+    animation: float 6s ease-in-out infinite;
+    user-select: none;
+}
+
+.floating-icon:nth-child(1) {
+    top: 20%;
+    left: 10%;
+    animation-delay: 0s;
+}
+
+.floating-icon:nth-child(2) {
+    top: 30%;
+    right: 15%;
+    animation-delay: 1s;
+}
+
+.floating-icon:nth-child(3) {
+    top: 60%;
+    left: 5%;
+    animation-delay: 2s;
+}
+
+.floating-icon:nth-child(4) {
+    top: 70%;
+    right: 10%;
+    animation-delay: 3s;
+}
+
+.floating-icon:nth-child(5) {
+    top: 40%;
+    left: 20%;
+    animation-delay: 4s;
+}
+
+.floating-icon:nth-child(6) {
+    top: 50%;
+    right: 25%;
+    animation-delay: 5s;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px) rotate(0deg);
+        opacity: 0.3;
+    }
+    50% {
+        transform: translateY(-20px) rotate(10deg);
+        opacity: 0.6;
+    }
+}
+
+/* Floating Buttons */
+.floating-btn {
+    animation: floatButton 3s ease-in-out infinite;
+    position: relative;
+    overflow: hidden;
+}
+
+.floating-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s;
+}
+
+.floating-btn:hover::before {
+    left: 100%;
+}
+
+@keyframes floatButton {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-5px); }
+}
+
+/* Floating Scroll */
+.floating-scroll {
+    animation: bounceScroll 2s ease-in-out infinite;
+}
+
+.scroll-arrow {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.scroll-text {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.8);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    animation: fadeInOut 2s ease-in-out infinite;
+}
+
+@keyframes bounceScroll {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(10px); }
+}
+
+@keyframes fadeInOut {
+    0%, 100% { opacity: 0.5; }
+    50% { opacity: 1; }
+}
+
+/* Animated Skill Bars */
+.animated-skill .skill-progress {
+    width: 0% !important;
+    transition: width 2s ease-in-out;
+}
+
+.animated-skill.animate .skill-progress {
+    width: var(--target-width) !important;
+}
+
+/* Animated Counters */
+.animated-counter {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.8s ease;
+}
+
+.animated-counter.animate {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.counter {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #11ABB0;
+    margin-bottom: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+/* Portfolio Card Animations */
+.portfolio-card {
+    transform: perspective(1000px) rotateX(0deg);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.portfolio-card:hover {
+    transform: perspective(1000px) rotateX(5deg) translateY(-10px) scale(1.02);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+}
+
+/* Project Image Hover Effects */
+.project-image {
+    overflow: hidden;
+    position: relative;
+}
+
+.project-image::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, transparent 30%, rgba(17, 171, 176, 0.1) 50%, transparent 70%);
+    transform: translateX(-100%);
+    transition: transform 0.6s ease;
+    z-index: 1;
+}
+
+.portfolio-card:hover .project-image::before {
+    transform: translateX(100%);
+}
+
+/* Tech Tag Animations */
+.tech-tag {
+    position: relative;
+    overflow: hidden;
+}
+
+.tech-tag::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s ease;
+}
+
+.tech-tag:hover::before {
+    left: 100%;
+}
+
+/* Resume Card Animations */
+.resume-card {
+    position: relative;
+    overflow: hidden;
+}
+
+.resume-card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(17, 171, 176, 0.1), transparent);
+    transition: left 0.6s ease;
+    pointer-events: none;
+}
+
+.resume-card:hover::after {
+    left: 100%;
+}
+
+/* Achievement Item Animations */
+.achievement-item {
+    position: relative;
+    overflow: hidden;
+}
+
+.achievement-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(17, 171, 176, 0.1), transparent);
+    transition: left 0.5s ease;
+}
+
+.achievement-item:hover::before {
+    left: 100%;
+}
+
+/* Contact Link Animations */
+.contact-link-item {
+    position: relative;
+    overflow: hidden;
+}
+
+.contact-link-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(17, 171, 176, 0.1), transparent);
+    transition: left 0.5s ease;
+}
+
+.contact-link-item:hover::before {
+    left: 100%;
+}
+
+/* Pulse Animation for Important Elements */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+.pulse-animation {
+    animation: pulse 2s ease-in-out infinite;
+}
+
+/* Glow Effect */
+@keyframes glow {
+    0%, 100% { box-shadow: 0 0 20px rgba(17, 171, 176, 0.3); }
+    50% { box-shadow: 0 0 30px rgba(17, 171, 176, 0.6); }
+}
+
+.glow-animation {
+    animation: glow 3s ease-in-out infinite;
+}
+
+/* Rotating Elements */
+@keyframes rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.rotate-animation {
+    animation: rotate 10s linear infinite;
+}
+
+/* Slide In Animations */
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.slide-in-left {
+    animation: slideInLeft 1s ease-out;
+}
+
+.slide-in-right {
+    animation: slideInRight 1s ease-out;
+}
+
+/* Staggered Animation Delays */
+.animate-delay-1 { animation-delay: 0.1s; }
+.animate-delay-2 { animation-delay: 0.2s; }
+.animate-delay-3 { animation-delay: 0.3s; }
+.animate-delay-4 { animation-delay: 0.4s; }
+.animate-delay-5 { animation-delay: 0.5s; }
+.animate-delay-6 { animation-delay: 0.6s; }
+
+/* Responsive Animations */
+@media (max-width: 768px) {
+    .floating-icon {
+        font-size: 1.5rem;
+    }
+    
+    .typing-text {
+        font-size: 1.4rem;
+    }
+    
+    .subtitle-text span {
+        font-size: 1rem;
+    }
+    
+    .floating-btn {
+        animation: none;
+    }
+    
+    .floating-btn:hover {
+        transform: translateY(-2px);
+    }
+}
+
+/* Performance Optimizations */
+.animated-skill,
+.animated-counter,
+.portfolio-card,
+.resume-card {
+    will-change: transform;
+}
+
+/* Reduced Motion Support */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+    
+    .floating-icon,
+    .floating-btn,
+    .floating-scroll {
+        animation: none;
+    }
+}

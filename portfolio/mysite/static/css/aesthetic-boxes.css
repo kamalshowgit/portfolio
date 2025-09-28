@@ -881,6 +881,45 @@
     line-height: 1.4;
 }
 
+/* Contact Link Items */
+.contact-link-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    transition: all 0.3s ease;
+}
+
+.contact-link-item:hover {
+    background: rgba(255, 255, 255, 0.08);
+    transform: translateX(5px);
+}
+
+.contact-link-item i {
+    color: #11ABB0;
+    font-size: 1.2rem;
+    width: 20px;
+    text-align: center;
+    flex-shrink: 0;
+}
+
+.contact-link-item a {
+    color: rgba(255, 255, 255, 0.9);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.contact-link-item a:hover {
+    color: #11ABB0;
+}
+
+.contact-link-item span {
+    color: rgba(255, 255, 255, 0.9);
+}
+
 /* Responsive Design for Resume */
 @media (max-width: 768px) {
     .role-header {

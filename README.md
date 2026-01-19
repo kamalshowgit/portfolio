@@ -196,7 +196,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - Email: kamalsoni3839@gmail.com
 - LinkedIn: [kamalsonikgp](https://www.linkedin.com/in/kamalsonikgp/)
 - GitHub: [kamalshowgit](https://github.com/kamalshowgit)
-- Phone: +91 9426827891
 
 ## 🙏 Acknowledgments
 
